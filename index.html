@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo two sandbox attributes.</title>
+</head>
+<body>
+  <h1><code>allow-unsandboxed-auxiliary</code></h1>
+
+  <h2>With</h2>
+  <iframe
+    sandbox="allow-unsandboxed-auxiliary allow-popups"
+    srcdoc="<a href='https://chrome.com/' target='_blank'>Visit chrome.com</a>"></iframe>
+
+  <h2>Without</h2>
+  <iframe
+    sandbox="allow-popups"
+    srcdoc="<a href='https://chrome.com/' target='_blank'>Visit chrome.com</a>"></iframe>
+  
+  <h1><code>allow-modals</code></h1>
+
+  <h2>With</h2>
+  <iframe
+    sandbox="allow-modals allow-scripts"
+    srcdoc="<button>alert('yay!');</button><script>document.querySelector('button').addEventListener('click', function () { alert('yay!'); });</script>"></iframe>
+
+  <h2>Without</h2>
+  <iframe
+    sandbox="allow-scripts"
+    srcdoc="<button>alert('yay!');</button><script>document.querySelector('button').addEventListener('click', function () { alert('yay!'); });</script>"></iframe>
+</body>
+</html>
